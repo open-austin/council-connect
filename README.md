@@ -17,5 +17,7 @@ We expect to have notifications for future items, the ability to search past ite
 
 *Writers to document our work today as well as the reqs for features discussed but not viable with current data structure.
 
-Description of the code design:  Austin City Council's website is scraped to extract meeting agenda items.  The items are then loaded into a wordpress/bbpress framework.  The backend is written using PHP to control the flow and interface with the MySql database.  Client side code is written in JQuery to standarize browser behavior for DOM manimpulation and event handling.  Responsive Bootstrap classes are used to make the front end compatible with a variety of device types and sizes.  
+---
+###Description of the Code Design
+Austin City Council's website is scraped to extract meeting agenda items.  The items are then loaded into a wordpress/bbpress framework.  The backend is written using PHP to control the flow and interface with the MySql database.  Client side code is written in JQuery to standarize browser behavior for DOM manimpulation and event handling.  Responsive Bootstrap classes are used to make the front end compatible with a variety of device types and sizes.  
 
