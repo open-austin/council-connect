@@ -162,45 +162,23 @@ public function tagsNotifyText ($mobileTags, $agendaItem, $content) {
 
     $AccountSid = "AC493f9987eac70cfdca386037c4a09423";
     $AuthToken = "78ca1ef4c9460df1e7389c4725eb3371";
-$f = fopen ('f.txt', 'w');
 
     $msgsPrepared = "";
 
-$fv = "\n" . '$mobileTags: ';
-fwrite ($f, $fv . json_encode($mobileTags));
-
     foreach ($mobileTags as $tag => $numbers) {
-
-$fv = "\n" . '$tag: ';
-fwrite ($f, $fv . json_encode($tag));
-
-$fv = "\n" . '$numbers: ';
-fwrite ($f, $fv . json_encode($numbers));
-
-$fv = "\n" . '$content: ';
-fwrite ($f, $fv . json_encode($content));
 
         if (preg_match ("/$tag/i", $content)) {
 
             foreach ($numbers as $number) {
     
                 $msg = $tag . ' ' . $agendaItem . "\n";
-  $fv = "\n" . '$msg: ';
-  fwrite ($f, $fv . json_encode($msg));
-
                 $msgsPrepared .= $msg;
                 $txtmsg = 'atxcc notify ' . $msg;
                 $sms = array ('From' => '512-309-7363', 'To' => $number, 'Body' => $txtmsg);
-  $fv = "\n" . '$sms: ';
-  fwrite ($f, $fv . json_encode($sms));
-
 
                 $client = new Services_Twilio($AccountSid, $AuthToken);
                 $message = $client->account->messages->create($sms);
                 $res = "Sent message {$message->sid}";
-  $fv = "\n" . '$res: ';
-  fwrite ($f, $fv . json_encode($res));
-
 
             } // end foreach ($numbers as $number)
 
@@ -221,6 +199,14 @@ fwrite ($f, $fv . json_encode($content));
 
 } // end tagsNotifyText ($mobileTags, $content)
 
+
+
+//---------------------
+public function tagsNotifyEmail ($emailData, $content) {
+
+    
+
+} // end tagsNotifyEmail ($emailData, $content)
 
 //---------------------
 public function getTags ($user) {
