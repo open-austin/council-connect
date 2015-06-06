@@ -96,6 +96,13 @@ class Topics {
     //---------------------
     function topicsShowContent ($topics) {
 
+        global $atxcc_db;
+
+            // get draft date from ac_data                    
+        $query = "SELECT ackey FROM ac_data WHERE actype=?"; 
+        $row = $atxcc_db -> doQueryRow ($query, ['draft']); 
+                                                           
+        $draftDate = $row ['ackey'];        
         $stopics = [];
 
         foreach ($topics as $topic) {
@@ -109,11 +116,13 @@ class Topics {
 
         foreach ($stopics as $topic) {
 
+            $dispDate = $topic ['ddate']; 
+
             ?>
             <tr class='ztopicsrow'> 
-                <td class='zdate'> 
+                <td class='zdate <?php if ($dispDate == $draftDate) {echo "zdraft";} ?>'> 
                     <?php 
-                        echo ($topic ['ddate']);
+                        echo ($dispDate);
                     ?>
                 </td>
                 <td class='zitem'> 
