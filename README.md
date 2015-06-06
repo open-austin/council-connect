@@ -5,17 +5,17 @@ We expect to have notifications for future items, the ability to search past ite
 
 ---
 ###HELP WANTED
-*UI
+* UI
 
-*WordPress
+* WordPress
 
-*Experts who know the city's agenda management software or are familiar with the industry more generally 
+* Experts who know the city's agenda management software or are familiar with the industry more generally 
 
-*Citizens who have followed a decision through the Council's process
+* Citizens who have followed a decision through the Council's process
 
-*Wonky types interested in sorting through the city's website to trace out workflow as much as possible
+* Wonky types interested in sorting through the city's website to trace out workflow as much as possible
 
-*Writers to document our work today as well as the reqs for features discussed but not viable with current data structure.
+* Writers to document our work today as well as the reqs for features discussed but not viable with current data structure.
 
 ---
 ###Description of the Code Design
