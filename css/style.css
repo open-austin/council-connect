@@ -1,0 +1,23 @@
+.zitem { font-weight: bold; text-align: center; }
+.zdate { font-size: 8pt; text-align: center; padding-left: 5px; padding-right: 5px; }
+.zcontent { white-space: nowrap; }
+#ztopics { overflow-x: hidden; }
+/* .ztopicsrow { padding-bottom: 50px; } */
+#itemcat, #datecat { padding-left: 5px; padding-right: 5px; }
+#descriptioncat { padding-left: 10px; }
+#descr { line-height: 100%; }
+#zsearch { margin-top: 12px; position: absolute; right:100px;}
+.zmenu a { font-weight: bold; color: green !important; }
+/* span:hover { background-color: rgb (209,248,255); } */
+
+
+/* body { text-align: center; } */
+/* #main { display: block; border: 1px #a2a2a2 solid; width:90%; margin:0px auto; } */
+/* #main {border: 1px solid black} */
+/* #wrapper { display: block; border: 1px #a2a2a2 solid; width:90%; margin:0px auto; } */
+/* #header { border: 2px #a2a2a2 solid; } */
+/* #content { width: 75%; border: 2px #a2a2a2 solid; float: left; } */
+/* #sidebar { width: 23%; border: 2px #a2a2a2 solid; float: right; } */
+/* #delimiter { clear: both; } */
+/* #footer { border: 2px #a2a2a2 solid; } */
+/* .title { font-size: 11pt; font-family: verdana; font-weight: bold; } */
