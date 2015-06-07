@@ -32,11 +32,31 @@ class Topics {
 		public function homeInit () {
 
 			?>
-					<h1>this is the homepage for Council Connect</h1>
+					<h1>Council Connect - Austin is one bad ass town!</h1>
 
     		<?php
 		} // end homepage ()
 
+   public function councilInit () {
+
+    ?>
+          <h1>Find your council District</h1>
+					
+					<iframe src='http://www.austintexas.gov/GIS/CouncilDistrictMap/' width='100%' height='650' frameborder='0'></iframe>
+
+        <?php
+    } // end homepage ()
+
+   public function councilprocessInit () {
+
+    ?>
+          <h1>The Council Process Explained</h1>
+					
+				<iframe src='//cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=1lB2H7NGLSeHw41eIGU7I2onEN-lMVE59Z17NC_rNDrA&font=Bevan-PotanoSans&maptype=osm&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
+
+
+        <?php
+    } // end homepage ()
 		function aboutInit () {
 
 		?>

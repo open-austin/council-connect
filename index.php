@@ -41,9 +41,33 @@
 
     switch ($request) {
 
-        case '':
+        //case '':
+            //$_SESSION ['err'] = '';
+            //$atxcc_tp -> homeInit ();
+            //break;
+
+        case 'home':
+            $_SESSION ['err'] = '';
+            $atxcc_tp -> homeInit ();
+            break;
+
+        case 'agendapage':
             $_SESSION ['err'] = '';
             $atxcc_tp -> topicsInit ();
+						break;
+
+        case 'findyourcouncildistrict':
+            $_SESSION ['err'] = '';
+            $atxcc_tp -> councilInit ();
+						break;
+
+        case 'councilprocess':
+            $_SESSION ['err'] = '';
+            $atxcc_tp -> councilprocessInit ();
+						break;
+
+        case 'about':
+            $atxcc_tp -> aboutInit ($_SESSION ['err']);
             break;
 
         case 'signup':
@@ -86,8 +110,11 @@
             break;
 
         default:
-            echo "'$request' not found";
+            $_SESSION ['err'] = '';
+            $atxcc_tp -> homeInit ();
             break;
+            #echo "'$request' not found";
+            #break;
 
     } // end switch ($_SERVER ['REQUEST_URI'])
         
