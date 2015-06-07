@@ -23,7 +23,6 @@ class Topics {
             <?php 
                 $this->topicsShow ()
             ?>
-
         </div>
 
         <?php
