@@ -176,7 +176,9 @@ public function tagsNotifyText ($mobileTags, $agendaItem, $content) {
     
                 $msg = $tag . ' ' . $agendaItem . "\n";
                 $msgsPrepared .= $msg;
-                $txtmsg = 'atxcc notify ' . $msg;
+                $agendaLink = 'http://goo.gl/i0FtLm';
+                $txtmsg = 'atxcc notify ' . $msg . ' ' . $agendaLink;
+
                 $sms = array ('From' => '512-309-7363', 'To' => $number, 'Body' => $txtmsg);
 
                 $client = new Services_Twilio($AccountSid, $AuthToken);
