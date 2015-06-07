@@ -18,6 +18,19 @@ class Topics {
 
         ?>
         <div id='agendaitems'>
+        <p>
+        Demo mode.  Try this:   <br>
+        1.  Sign up as a new user with your mobile number for text notifications. <br>
+        2.  Login with the new username. <br>
+        3.  Select 'Agenda Items', then scroll over the Description column and observe a text box pop up with the full description of any description field. <br>
+        4.  Move the cursor inside the box that just popped up, and scroll over any of the words (highlighted in red). <br>
+        5.  Click on any word.  There will be an instant search of all agenda items containing the word clicked.  There will also appear a form at the top with an option to register Text and/or Email message notification. <br>
+        6.  Select Text Msg checkbox, then click 'Register'. <br>
+        7.  Click on Tags menu to observe the keyword you just registered. <br>
+        8.  Click the Agenda Items menu again, and this time, click on the Description row you just visited to make the text pop up box.   <br>
+        9.  You should see an alert indicating confirmation of a text message sent, or a message that there was no match, if you clicked on a row that did not contain any of your registered keyword tags. <br>
+        </p>
+
             <h1 id='agendaheader'>Agenda Items</h1>
 
             <?php 
