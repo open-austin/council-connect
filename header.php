@@ -31,6 +31,9 @@ $atxcc_us = new User ();
 <script src="<?php echo get_template_directory_uri();?>/js/jsRefs/model.js"></script>
 <script src="<?php echo get_template_directory_uri();?>/js/jsRefs/util.js"></script>
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/mod-bootstrap.css">
+
+
 </head>
 <body id='zbody'>
     <div class='navbar navbar-default navbar-static-top'> 
