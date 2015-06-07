@@ -33,6 +33,7 @@ class Topics {
 
 			?>
 					<h1>Council Connect - Austin is one bad ass town!</h1>
+					<center><img src="<?php echo get_template_directory_uri();?>/img/acl_1024.png" /></center>
 
     		<?php
 		} // end homepage ()
