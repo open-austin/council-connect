@@ -116,57 +116,54 @@ descrWordHoverClick: function (numWords) {    $atxcc._dg.debug ({numWords: numWo
 
 
 //---------------------
-wordSearchRegister: function (keywords) {    $atxcc._dg.debug ({keywords: keywords})
+wordSearchRegister: function (keyword) {    $atxcc._dg.debug ({keyword: keyword})
 
 //console.log ('wordSearchRegister: keyword: ' + keyword)
 //var len = keyword.length
 //console.log ('len: ' + len)
 
     var matched
-    if (matched = keywords.match(/([-$,\w ]+)/)) {
+    if (matched = keyword.match(/([-$,\w]+)/)) {
 
-        keywords = matched [1]
-        if (matched = keywords.match (/(.*),\s*$/)) {
+        keyword = matched [1]
+        if (matched = keyword.match (/(.*),\s*$/)) {
 
-            keywords = matched [1]
+            keyword = matched [1]
 
-        } // end if (matched = keywords.match (/(.*),\s$/))
+        } // end if (matched = keyword.match (/(.*),\s$/))
 
-        //console.log ('keywords: ' + keywords)
+        //console.log ('keyword: ' + keyword)
 
-        $atxcc.events.keywordSearch (keywords)
-        $atxcc.events.keywordRegister (keywords)
+        $atxcc.events.keywordSearch (keyword)
+        $atxcc.events.keywordRegister (keyword)
 
     } else {
 
-        console.log ('keywords: ' + keywords + ' does not match re:  [-$,\w ]+ ')
+        console.log ('keyword: ' + keyword + ' does not match re:  [-$,\w]+ ')
 
-    } // end if (matched = keywords.match(/([-$,\w ]+)/))
+    } // end if (matched = keyword.match(/(\w+)/))
 
 }, // wordSearchRegister: function ()
 
 
 
 //---------------------
-keywordSearch: function (keywords) {    $atxcc._dg.debug ({keywords: keywords})
+keywordSearch: function (keyword) {    $atxcc._dg.debug ({keyword: keyword})
     
     //keyword = keyword.toLowerCase ()
 
-        // fetch all topics that contain the keywords
-    $.post ('wp-content/themes/atxcc/search.php', {keywords: keywords}, 
+        // fetch all topics that contain the keyword
+    $.post ('wp-content/themes/atxcc/search.php', {keyword: keyword}, 
         function (data) {
 
                 // Leave agenda head section, but remove all content rows
             $('.ztopicsrow')
             .remove ()
 
-            keyword_array = keywords.split(" ")
-            for (var i = 0; i < keyword_array.length; i++) {
-                var re = new RegExp ('(' + keyword_array[i] + ')', 'gi')
-                var spanKey = '<span class="skeyword">$1</span>'
+            var re = new RegExp ('(' + keyword + ')', 'gi')
+            var spanKey = '<span class="skeyword">$1</span>'
 
-                data = data.replace (re, spanKey)
-            }
+            data = data.replace (re, spanKey)
 
                 // display all topics containing keyword
             $('#ztopicsheader')
@@ -191,7 +188,7 @@ keywordSearch: function (keywords) {    $atxcc._dg.debug ({keywords: keywords})
 
 
 //---------------------
-keywordRegister: function (keywords) {    $atxcc._dg.debug ({keywords: keywords})
+keywordRegister: function (keyword) {    $atxcc._dg.debug ({keyword: keyword})
     
         // remove previous registration section, if it exists 
         // (happens when doing explicit search after either previous explicit search or tag based search)
@@ -243,14 +240,14 @@ keywordRegister: function (keywords) {    $atxcc._dg.debug ({keywords: keywords}
     } // end if (username)
     
 
-    keywords = keywords.toLowerCase ()
+    keyword = keyword.toLowerCase ()
     
     var registerForm = 
         '<div id="zregistersection" class="row">' +
             '<div class="col-sm-4">' + 
                 '<form id="zregisterform" class="well">' +
                     '<label>' + 
-                        'Register tags?: <span id="zkeyword" style="color: red">' + keywords + '</span>?' + 
+                        'Register <span id="zkeyword" style="color: red">' + keyword + '</span>?' + 
                     '</label>' + 
                     '<br>' + 
                         textinput +
@@ -268,7 +265,7 @@ keywordRegister: function (keywords) {    $atxcc._dg.debug ({keywords: keywords}
         .submit (
             function (event) {
                 event.preventDefault ()
-                $atxcc.events.keywordDoRegister (keywords, username)
+                $atxcc.events.keywordDoRegister (keyword, username)
                 location.reload ()
                 //$.post ('wp-content/themes/atxcc/index.php')
             }
@@ -306,7 +303,7 @@ doNotify: function (agendaItem, content) {    $atxcc._dg.debug ({agendaItem: age
 
 
 //---------------------
-keywordDoRegister: function (keywords, username) {    $atxcc._dg.debug ({keywords: keywords, username: username})
+keywordDoRegister: function (keyword, username) {    $atxcc._dg.debug ({keyword: keyword, username: username})
     
     var formData = $('#zregisterform').serializeArray()
     //ut.dumpOb ('formData', formData)
@@ -351,7 +348,7 @@ keywordDoRegister: function (keywords, username) {    $atxcc._dg.debug ({keyword
 
         } // end for (var i = 0; i < formData.length; i++)
         
-        $atxcc.events.insertAlerts (keywords, username, mobile, email)
+        $atxcc.events.insertAlerts (keyword, username, mobile, email)
 
     } // end if (username)
     
@@ -403,14 +400,14 @@ keywordDoRegister: function (keywords, username) {    $atxcc._dg.debug ({keyword
 
 
 //---------------------
-insertAlerts: function (tags, username, mobile, email) {    $atxcc._dg.debug ({tags: tags, username: username, mobile: mobile, email: email})
+insertAlerts: function (tag, username, mobile, email) {    $atxcc._dg.debug ({tag: tag, username: username, mobile: mobile, email: email})
     
-    //console.log ('tags: ' + tags)
+    //console.log ('tag: ' + tag)
     //console.log ('username: ' + username)
     //console.log ('mobile: ' + mobile)
     //console.log ('email: ' + email)
 
-    $.post ('wp-content/themes/atxcc/insert.php', {tags: tags, username: username, mobile: mobile, email: email}, 
+    $.post ('wp-content/themes/atxcc/insert.php', {tag: tag, username: username, mobile: mobile, email: email}, 
         function (data) {
             $atxcc.ut.dumpOb (data)
         }
