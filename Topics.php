@@ -184,11 +184,12 @@ class Topics {
     
     
     //---------------------
-    function getTopicsSearch ($keyword) {
+    function getTopicsSearch ($keywords) {
 
         global $atxcc_db;
 
-        $query = "SELECT post_title, post_content FROM wp_posts WHERE post_status='publish' AND post_type='topic' AND post_content LIKE '%$keyword%'";
+        $query = "SELECT post_title, post_content FROM wp_posts WHERE post_status='publish' AND post_type='topic' " .
+                 "AND MATCH(post_title, post_content) AGAINST('$keywords' IN NATURAL LANGUAGE MODE)";
 
         $rows = $atxcc_db -> doQuery ($query);
 
