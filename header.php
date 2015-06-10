@@ -39,10 +39,10 @@ $atxcc_us = new User ();
     <div class='navbar navbar-default navbar-static-top'> 
         <div class="container">
             <ul class='nav navbar-nav navbar-left'>
-                <li class='zmenu'> <a href='<?php echo site_url ();?>/home?0'>Home</a> </li>
+                <li class='zmenu'><a href='<?php echo site_url ();?>/home?0'><img src="<?php echo get_template_directory_uri();?>/img/councilconnectlogo.jpg" style="width:50px";></a> </li>
                 <li class='zmenu'> <a href='<?php echo site_url ();?>/about?0'>About</a> </li>
                 <li class='zmenu'> <a href='<?php echo site_url ();?>/findyourcouncildistrict?0'>Find Your Council District</a> </li>
-                <li class='zmenu'> <a href='<?php echo site_url ();?>/councilprocess?0'>The Council Process Explained</a> </li>
+                <li class='zmenu'> <a href='<?php echo site_url ();?>/councilprocess?0'>The Council Process</a> </li>
                 <li class='zmenu'> <a href='<?php echo site_url ();?>/agendapage?0'>Agenda Items</a> </li>
 
                 <?php

@@ -44,8 +44,15 @@ class Topics {
 		public function homeInit () {
 
 			?>
-					<h1>Council Connect - Austin is one bad ass town!</h1>
-					<center><img src="<?php echo get_template_directory_uri();?>/img/acl_1024.png" /></center>
+					<center><img src="<?php echo get_template_directory_uri();?>/img/home_splash.png" /></center>
+<br />
+		<div style="width:80%; height=5em;margin:auto;">
+		<div style="float:left; width:33%; background-color:yellow;">Subscribe</div><div style="float:left; width:33%; background-color:yellow;">Read Your Notifications</div><div style="float:left; width:33%; background-color:yellow;">Get Involved</div>
+	</div>
+	<br />
+	<div style="width:80%; height=5em;margin:auto;">
+<div style="float:left; width:33%; border-color:black; border:1px;">Subscribe to issues you care about by selecting keywords</div><div style="float:left; width:33%; border-color:black; border:1px;">Receive text messages or emails about upcoming counil agenda items releated to those issues.</div><div style="float:left; width:33%; border-color:black; border:1px;">We'll give you the tools to contact your council member, schedule testimony before the council, and learn ways to get involved.</div>
+	</div>
 
     		<?php
 		} // end homepage ()
@@ -63,10 +70,14 @@ class Topics {
    public function councilprocessInit () {
 
     ?>
-          <h1>The Council Process Explained</h1>
+
+        <h3>Follow a Sample Agenda</h3>
 					
 				<iframe src='//cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=1lB2H7NGLSeHw41eIGU7I2onEN-lMVE59Z17NC_rNDrA&font=Bevan-PotanoSans&maptype=osm&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
 
+          <h3>The Council Process Explained</h3>
+					
+				<center><img src="<?php echo get_template_directory_uri();?>/img/cc-flow-chart_720.png" /></center>
 
         <?php
     } // end homepage ()
@@ -75,23 +86,30 @@ class Topics {
 		?>
         <div>
             <h1>About Council Connect</h1>
+<p>
+Why can’t following the work of Austin’s City Council be as easy as following your high school friend’s vacation on Facebook? Council Connect is a first effort to make that happen.</p>
 
-				<p>This project will help the citizens of Austin participate in City Council decision making by providing notifications of upcoming agenda items and deadlines to sign up for public testimony. This will enable citizens to keep tabs on decision making so they can participate before decisions are finalized because Council information is currently too fragmented across different pages on the City's website.</p>
+<p>
+Proposed through a brief sketch at February’s Code Across event in Austin, Council Connect wants to facilitate citizen participation in Council decision making while it’s still possible to influence those decisions. The aspirations for the project were expansive but the leverage available through the data provided was limited. The Council Connect team who picked up the project at ATX Hack 4 Change refused to let that limitation write the end of the story. </p>
 
-			<p>We expect to have notifications for future items, the ability to search past items with suggested tags and a news feature combined in one app to make it easier for citizens to follow City Council events. Demo of basic functionality <a href='https://www.youtube.com/watch?v=s1Mg3bwntkU' TARGET='blank'>[here]</a>.</p>
+<p>
+The demo presented here will help the citizens of Austin participate in City Council decision making by providing notifications of upcoming agenda items based on user defined search terms identified through previous agenda items. This functionality will enable citizens to keep an eye on the issues that matter most to them. The app currently delivers notifications via text message but an e-mail option will be added soon. Future development will include further e-mail integration including the ability to contact selected Council Members and to sign up for General Citizen Communication. The vision behind the Council Connect demo intends to make it possible for a citizen to receive a notification about an item of interest on an upcoming Meeting Agenda and to then review that item, contact a Council Member or sign up for public testimony directly from that notification.</p>
 
-				<h3>HELP WANTED</h3>
-				<ul>
-					<li>UI </li>
-					<li>WordPress</li>
-					<li>Experts who know the city's agenda management software or are familiar with the industry more generally </li>
-					<li>Citizens who have followed a decision through the Council's process</li>
-					<li>Wonky types interested in sorting through the city's website to trace out workflow as much as possible</li>
-					<li>Writers to document our work today as well as the reqs for features discussed but not viable with current data structure.</li>
-				</ul>
-<hr />
-				<h3>Description of the Code Design</h3>
-			<p>Austin City Council's website is scraped to extract meeting agenda items.  The items are then loaded into a wordpress/bbpress framework.  The backend is written using PHP to control the flow and interface with the MySql database.  Client side code is written in JQuery to standarize browser behavior for DOM manimpulation and event handling.  Responsive Bootstrap classes are used to make the front end compatible with a variety of device types and sizes.  </p>
+<p>
+Our discussions as a team and the feedback we received from other community members attending the weekend hack event navigated to functionality that the data Austin’s City Council now publishes does not support. The original idea in February, for example, was more of a legislative tracking app that would make the whole workflow observable from an idea’s proposal to it’s final act on a Regular Meeting Agenda. Other ideas discussed included quick links to search by district numbers or by topics. This functionality would make it possible for citizens to learn more about the Council’s process by following their curiosity about their own district or trending topics.</p>
+
+<p>
+As much as the Council Connect team would like to deploy a slick new app, the team behind this project wants to launch a conversation… </p>
+
+<p>
+What would a citizen’s portal to City Council business look like? </p>
+
+<p>
+What are the technical requirements of a civic tool Austinites could use to both follow that business and to learn more about how it came to be?</p>
+
+<p>
+What could we make possible if our Public Information Offices not only published data but imagined the citizens of Austin as their end user?</p>
+
         </div>
 
         <?php
